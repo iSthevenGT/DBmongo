@@ -1,4 +1,4 @@
-name: Setup MongoDB and Express
+name: Setup MongoDB Database
 
 on:
   push:

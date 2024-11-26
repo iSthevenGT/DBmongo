@@ -1,0 +1,23 @@
+name: Setup MongoDB and Express
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    
+    - name: Build and run containers with Docker Compose
+      run: |
+        # Instalar Docker Compose si no está disponible
+        sudo apt-get update && sudo apt-get install -y docker-compose
+        
+        # Construir y levantar los contenedores
+        docker-compose up --build -d
